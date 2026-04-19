@@ -211,6 +211,7 @@ function initSectionAnimations() {
             }
         });
     }, {
+    } {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
@@ -262,3 +263,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+   (function() {
+  emailjs.init("QlhsnBaSPaSssqP7J");
+} )();
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    emailjs.init("QlhsnBaSPaSssqP7J"); // ✔ YOUR PUBLIC KEY
+
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            "service_84u638e",   // ✔ your service ID
+            "template_1g0ebr8",  // ✔ your template ID
+            this
+        )
+        .then(() => {
+            alert("✅ Message sent successfully!");
+            form.reset();
+        })
+        .catch((error) => {
+            console.log(error);
+            alert("❌ Failed to send message");
+        });
+    });
+
+});
