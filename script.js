@@ -152,7 +152,7 @@ function initContactForm() {
     if (form) {
         form.addEventListener("submit", function (e) {
             e.preventDefault();
-            emailjs.sendForm("service_84u638e", "template_1g0ebr8", this)
+            emailjs.sendForm("service_84u638e", "template_duhdl7q", this)
             .then(() => {
                 alert("✅ Message sent successfully!");
                 form.reset();
